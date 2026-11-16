@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>뷰블 워크스페이스 링크</title>
+<style>
+:root{--ink:#16233a;--muted:#5b6b82;--line:#d8e1ee;--page:#f4f7fb;--card:#fff;--chip:#e8eef6;--staff:#2563eb;--doctor:#0f9d8a;--admin:#3d4a60;--mock:#b4590a;--on:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e8eef8;--muted:#a3b1c6;--line:#2b3a52;--page:#0f1826;--card:#172236;--chip:#22304a;--staff:#7aa2ff;--doctor:#34c9b4;--admin:#b7c2d4;--mock:#f0a65a;--on:#0b1626}}
+:root[data-theme="dark"]{--ink:#e8eef8;--muted:#a3b1c6;--line:#2b3a52;--page:#0f1826;--card:#172236;--chip:#22304a;--staff:#7aa2ff;--doctor:#34c9b4;--admin:#b7c2d4;--mock:#f0a65a;--on:#0b1626}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:16px/1.65 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:56px 16px 72px}
+h1{margin:0 0 8px;font-size:clamp(26px,5vw,36px);line-height:1.25;letter-spacing:-.01em;text-wrap:balance}
+.lead{margin:0 0 8px;color:var(--muted);max-width:60ch}
+h2{margin:36px 0 12px;font-size:19px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tag{font-size:12.5px;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--chip);color:var(--muted)}
+.hint{margin:-4px 0 12px;color:var(--muted);font-size:14.5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.card{--accent:var(--admin);display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:inherit;text-decoration:none;min-width:0}
+.card[data-kind="staff"]{--accent:var(--staff)}
+.card[data-kind="doctor"]{--accent:var(--doctor)}
+.card[data-kind="mock"]{--accent:var(--mock)}
+.card:hover,.card:focus-visible{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.card strong{font-size:18px}
+.card small{font-size:13px;font-weight:600;color:var(--accent)}
+.card span{color:var(--muted);font-size:14.5px}
+.card code{font:12.5px/1.5 Consolas,"Courier New",monospace;color:var(--muted);overflow-wrap:anywhere}
+.card em{margin-top:auto;align-self:flex-start;font-style:normal;font-weight:700;padding:8px 14px;border-radius:999px;background:var(--accent);color:var(--on)}
+.note{margin-top:28px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:14.5px}
+</style>
+</head>
+<body>
+<main>
+<h1>뷰블 워크스페이스 링크</h1>
+<p class="lead">직원 화면, 원장단 화면, 관리자 화면으로 가는 주소를 모았습니다. 누르면 새 탭에서 열립니다.</p>
+
+<h2>실제 운영 <span class="tag">실제 자료 · 로그인 필요</span></h2>
+<div class="cards">
+<a class="card" data-kind="staff" href="https://bb-staff.pages.dev/work/" target="_blank" rel="noopener"><strong>직원 화면</strong><small>직원 계정으로 로그인</small><span>원장님 줄이 빠진 직원용 화면입니다.</span><code>bb-staff.pages.dev/work/</code><em>열기</em></a>
+<a class="card" data-kind="doctor" href="https://bb-staff.pages.dev/doctor/" target="_blank" rel="noopener"><strong>원장단 화면</strong><small>원장님 계정으로 로그인</small><span>원장님이 보는 화면입니다. 내 하루, 내 연차, 일정표, 내 식대가 있습니다.</span><code>bb-staff.pages.dev/doctor/</code><em>열기</em></a>
+<a class="card" data-kind="admin" href="https://bb-staff.pages.dev/_admin-login?returnTo=%2Fwork%2F" target="_blank" rel="noopener"><strong>관리자 · 직원 탭</strong><small>관리자 비밀번호로 로그인</small><span>로그인하면 직원 탭이 열립니다. 위쪽 탭에서 원장단으로 바꿀 수 있습니다.</span><code>bb-staff.pages.dev/_admin-login?returnTo=/work/</code><em>열기</em></a>
+<a class="card" data-kind="admin" href="https://bb-staff.pages.dev/_admin-login?returnTo=%2Fdoctor%2F" target="_blank" rel="noopener"><strong>관리자 · 원장단 탭</strong><small>관리자 비밀번호로 로그인</small><span>로그인하면 원장단 탭이 바로 열립니다. 원장님 일정, 식대, 연차를 등록하고 고칩니다.</span><code>bb-staff.pages.dev/_admin-login?returnTo=/doctor/</code><em>열기</em></a>
+</div>
+
+<h2>목업 <span class="tag">꾸며 낸 자료</span></h2>
+<p class="hint">이름, 일정, 금액은 모두 지어낸 것입니다. 탭 이름은 바꾸기 전인 "원장"으로 보입니다.</p>
+<div class="cards">
+<a class="card" data-kind="mock" href="https://doctorleegh-debug.github.io/bb-doctor-workspace-mockup/" target="_blank" rel="noopener"><strong>목업 첫 화면</strong><span>아래 네 화면으로 가는 안내 화면입니다.</span><em>열기</em></a>
+<a class="card" data-kind="mock" href="https://doctorleegh-debug.github.io/bb-doctor-workspace-mockup/doctor/?as=doctor" target="_blank" rel="noopener"><strong>원장단 화면</strong><span>원장님이 로그인했을 때 보는 화면입니다.</span><em>열기</em></a>
+<a class="card" data-kind="mock" href="https://doctorleegh-debug.github.io/bb-doctor-workspace-mockup/doctor/?as=chief" target="_blank" rel="noopener"><strong>대표원장 화면</strong><span>원장단 화면에 지출결의서 결재가 더해진 화면입니다.</span><em>열기</em></a>
+<a class="card" data-kind="mock" href="https://doctorleegh-debug.github.io/bb-doctor-workspace-mockup/doctor/?as=admin" target="_blank" rel="noopener"><strong>관리자 화면</strong><span>한 관리자 화면에서 위쪽 탭으로 직원과 원장단 자료를 오갑니다.</span><em>열기</em></a>
+<a class="card" data-kind="mock" href="https://doctorleegh-debug.github.io/bb-doctor-workspace-mockup/work/?as=staff" target="_blank" rel="noopener"><strong>직원 화면</strong><span>원장님 줄이 빠진 직원용 화면입니다. 비교용입니다.</span><em>열기</em></a>
+</div>
+
+<p class="note">이 페이지에는 주소만 있습니다. 실제 화면의 자료는 로그인해야 보입니다. 2026-11-16 기준.</p>
+</main>
+</body>
+</html>
